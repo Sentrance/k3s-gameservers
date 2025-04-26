@@ -1,0 +1,77 @@
+# These are value overrides for the helm chart defined here
+# https://github.com/itzg/minecraft-server-charts
+
+# Thank you, Giles, for providing a reference file with useful comments.
+# https://github.com/gilesknap/k3s-minecraft/blob/main/minecraft-helm.yaml
+
+# It contains the most common parameters, but for even more settings, see
+# https://github.com/itzg/minecraft-server-charts/blob/master/charts/minecraft/values.yaml
+
+# K8S resources to grant the pod. memory must be the same as java memory in minecraftServer:
+# For processors - if you want to run lots of servers but only use one or two at
+# a time then it is OK to set a low request and a higher limit. Minecraft servers
+# can make use of quite a few cpus if available and this is especially helpful
+# at startup time
+resources:
+  requests:
+    memory: 8Gi
+    cpu: 1
+  limits:
+    memory: 24Gi
+    cpu: 3
+
+# Common minecraft server settings
+minecraftServer:
+  version: LATEST
+  # Paper is just a more optimized MC server
+  # https://papermc.io/software/paper
+  type: "PAPER"
+  paperDownloadUrl: https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/226/downloads/paper-1.21.4-226.jar
+  difficulty: hard
+  whitelist:
+  ops:
+  forcegameMode: true
+  levelSeed:
+  maxWorldSize: 50000
+  gameMode: survival
+  motd: "Welcome to Minecraft on Kubernetes"
+  pvp: true
+  # REQUIRED this means you get nodePort exposed on all nodes and will get
+  # directed to the correct node if you connect to any
+  serviceType: NodePort
+  # restore the world from a backup on first execution (requires NFS volume - see below)
+  downloadWorldUrl:
+  # external port must be unique across all mc server instances on a given node
+  nodePort: 25565
+  viewDistance: 10
+  memory: 8Gi
+
+  rcon:
+    # enable rcon for remote control - set to false if not required
+    enabled: true
+    # external port must be unique across all mc server instances
+    nodePort: 25565
+    # required
+    serviceType: NodePort
+    password: "globe"
+
+extraEnv:
+  # recommended rolling logs for saving disk
+  ENABLE_ROLLING_LOGS: true
+  # if this is true then minecraftServer properties above are always applied
+  # on every restart, if false they only apply at first run
+  OVERRIDE_SERVER_PROPERTIES: true
+  # if this is true then downloadWorldUrl is always loaded on restart
+  # useful for resetting the world but should be reset to false afterwards
+  # WARNING: setting this to true deletes your previous world data
+  FORCE_WORLD_COPY: false
+
+# required to save the world in persistent local-path storage (k3s default Storage Class)
+# by default this goes in /var/lib/rancher/k3s/storage on the executing node.
+# NOTE this ties the deployment to the first node it spins up on,
+# TODO: use an NFS mount to avoid this
+persistence:
+  annotations: {}
+  dataDir:
+    enabled: true
+    Size: 1Gi

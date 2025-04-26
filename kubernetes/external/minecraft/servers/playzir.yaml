@@ -1,0 +1,43 @@
+resources:
+  requests:
+    memory: 8Gi
+    cpu: 1
+  limits:
+    memory: 24Gi
+    cpu: 3
+
+minecraftServer:
+  version: LATEST
+  type: "PAPER"
+  paperDownloadUrl:
+  difficulty: hard
+  whitelist:
+  ops:
+  forcegameMode: true
+  levelSeed:
+  maxWorldSize: 50000
+  gameMode: survival
+  motd: "Welcome to Minecraft on Kubernetes"
+  pvp: true
+  serviceType: NodePort
+  downloadWorldUrl:
+  nodePort: 25565
+  viewDistance: 10
+  memory: 8Gi
+
+  rcon:
+    enabled: true
+    nodePort: 25565
+    serviceType: NodePort
+    password: "globe"
+
+extraEnv:
+  ENABLE_ROLLING_LOGS: true
+  OVERRIDE_SERVER_PROPERTIES: true
+  FORCE_WORLD_COPY: false
+
+persistence:
+  annotations: {}
+  dataDir:
+    enabled: true
+    Size: 1Gi
