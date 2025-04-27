@@ -22,7 +22,7 @@ minecraftServer:
   serviceType: NodePort
   downloadWorldUrl:
   nodePort: 25565
-  viewDistance: 10
+  viewDistance: 15
   memory: 8Gi
 
   rcon:
