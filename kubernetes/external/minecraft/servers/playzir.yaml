@@ -9,7 +9,7 @@ resources:
 minecraftServer:
   version: LATEST
   type: "PAPER"
-  paperDownloadUrl:
+  paperDownloadUrl: https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/226/downloads/paper-1.21.4-226.jar
   difficulty: hard
   whitelist:
   ops:

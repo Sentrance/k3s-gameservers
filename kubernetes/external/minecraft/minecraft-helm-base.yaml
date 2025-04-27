@@ -26,7 +26,7 @@ minecraftServer:
   # Paper is just a more optimized MC server
   # https://papermc.io/software/paper
   type: "PAPER"
-  paperDownloadUrl: https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/226/downloads/paper-1.21.4-226.jar
+  paperDownloadUrl:
   difficulty: hard
   whitelist:
   ops:
