@@ -11,7 +11,7 @@ spec:
     - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-    - name: minecraft
+    - name: http-web
       nodePort: 32323
       port: 3000
       protocol: TCP
