@@ -1,0 +1,42 @@
+resources:
+  requests:
+    memory: 8Gi
+    cpu: 1
+  limits:
+    memory: 24Gi
+    cpu: 3
+
+minecraftServer:
+  version: LATEST
+  type: "PAPER"
+  paperDownloadUrl: https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/226/downloads/paper-1.21.4-226.jar
+  difficulty: hard
+  whitelist:
+  ops:
+  forcegameMode: true
+  levelSeed:
+  maxWorldSize: 50000
+  gameMode: survival
+  motd: "Welcome to Minecraft on Kubernetes"
+  pvp: true
+  serviceType: NodePort
+  downloadWorldUrl:
+  nodePort: 30100
+  viewDistance: 15
+  memory: 8g
+
+  rcon:
+    enabled: true
+    nodePort: 30001
+    serviceType: NodePort
+    password: "globe"
+
+extraEnv:
+  ENABLE_ROLLING_LOGS: true
+  OVERRIDE_SERVER_PROPERTIES: true
+  FORCE_WORLD_COPY: false
+
+persistence:
+  dataDir:
+    enabled: true
+    Size: 20Gi
