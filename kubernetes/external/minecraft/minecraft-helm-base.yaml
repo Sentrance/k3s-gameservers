@@ -14,10 +14,10 @@
 # at startup time
 resources:
   requests:
-    memory: 8Gi
+    memory: 8g
     cpu: 1
   limits:
-    memory: 24Gi
+    memory: 24g
     cpu: 3
 
 # Common minecraft server settings
