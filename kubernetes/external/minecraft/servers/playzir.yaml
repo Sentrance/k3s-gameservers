@@ -21,13 +21,13 @@ minecraftServer:
   pvp: true
   serviceType: NodePort
   downloadWorldUrl:
-  nodePort: 30000
+  nodePort: 30100
   viewDistance: 15
   memory: 8Gi
 
   rcon:
     enabled: true
-    nodePort: 30000
+    nodePort: 30001
     serviceType: NodePort
     password: "globe"
 

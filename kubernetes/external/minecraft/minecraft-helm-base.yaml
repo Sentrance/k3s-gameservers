@@ -42,7 +42,7 @@ minecraftServer:
   # restore the world from a backup on first execution (requires NFS volume - see below)
   downloadWorldUrl:
   # external port must be unique across all mc server instances on a given node
-  nodePort: 25565
+  nodePort: 30100
   viewDistance: 10
   memory: 8Gi
 
@@ -50,7 +50,7 @@ minecraftServer:
     # enable rcon for remote control - set to false if not required
     enabled: true
     # external port must be unique across all mc server instances
-    nodePort: 25565
+    nodePort: 30001
     # required
     serviceType: NodePort
     password: "globe"
