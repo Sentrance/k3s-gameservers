@@ -37,7 +37,8 @@ extraEnv:
   FORCE_WORLD_COPY: false
 
 persistence:
+  storageClass: nfs-storageclass
   annotations: {}
   dataDir:
     enabled: true
-    Size: 1Gi
+    Size: 20Gi
