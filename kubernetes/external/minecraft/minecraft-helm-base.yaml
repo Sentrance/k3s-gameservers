@@ -14,10 +14,10 @@
 # at startup time
 resources:
   requests:
-    memory: 8g
+    memory: 8Gi
     cpu: 1
   limits:
-    memory: 24g
+    memory: 24Gi
     cpu: 3
 
 # Common minecraft server settings
@@ -44,7 +44,7 @@ minecraftServer:
   # external port must be unique across all mc server instances on a given node
   nodePort: 30100
   viewDistance: 10
-  memory: 8Gi
+  memory: 8g
 
   rcon:
     # enable rcon for remote control - set to false if not required

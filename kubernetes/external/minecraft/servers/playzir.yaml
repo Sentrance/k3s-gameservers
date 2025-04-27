@@ -1,9 +1,9 @@
 resources:
   requests:
-    memory: 8g
+    memory: 8Gi
     cpu: 1
   limits:
-    memory: 24g
+    memory: 24Gi
     cpu: 3
 
 minecraftServer:
@@ -23,7 +23,7 @@ minecraftServer:
   downloadWorldUrl:
   nodePort: 30100
   viewDistance: 15
-  memory: 8Gi
+  memory: 8g
 
   rcon:
     enabled: true
