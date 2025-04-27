@@ -3,7 +3,7 @@ grafana:
   defaultDashboardsEnabled: true
   persistence:
     enabled: true
-    storageClassName: prometheus-grafana
+    storageClassName: storage-kps
     existingClaim: pvc-kube-prometheus-stack
 
 prometheusOperator:
