@@ -29,9 +29,3 @@ prometheus:
     serviceMonitorSelectorNilUsesHelmValues: false
     serviceMonitorSelector: {}
     serviceMonitorNamespaceSelector: {}
-    additionalScrapeConfigs:
-      - job_name: 'minecraft'
-        static_configs:
-          - targets: [ 'localhost:9940' ]
-            labels:
-              server_name: 'playzir'
