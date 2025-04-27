@@ -1,3 +1,3 @@
-## Fabric mod for prometheus stats
+## Paper mod for prometheus stats
 
-https://github.com/ruscalworld/fabric-exporter?tab=readme-ov-file
+https://github.com/sladkoff/minecraft-prometheus-exporter
