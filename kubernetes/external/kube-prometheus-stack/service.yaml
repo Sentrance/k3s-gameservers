@@ -12,7 +12,7 @@ spec:
   ipFamilyPolicy: SingleStack
   ports:
     - name: minecraft
-      nodePort: 3030
+      nodePort: 32323
       port: 3000
       protocol: TCP
   selector:
