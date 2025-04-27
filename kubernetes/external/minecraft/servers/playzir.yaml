@@ -20,9 +20,8 @@ minecraftServer:
   motd: "Welcome to Minecraft on Kubernetes"
   pvp: true
   serviceType: NodePort
-  downloadWorldUrl:
   nodePort: 30100
-  viewDistance: 15
+  viewDistance: 20
   memory: 8g
 
   rcon:

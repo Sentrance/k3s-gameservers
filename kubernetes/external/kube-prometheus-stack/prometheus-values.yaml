@@ -1,0 +1,31 @@
+grafana:
+  enabled: true
+  defaultDashboardsEnabled: true
+  persistence:
+    enabled: true
+    storageClassName: storage-kps
+    existingClaim: pvc-kube-prometheus-stack
+
+prometheusOperator:
+  resources:
+    requests:
+      cpu: 600m
+      memory: 600Mi
+    limits:
+      cpu: 1000m
+      memory: 1000Mi
+  prometheusConfigReloader:
+    resources:
+      requests:
+        cpu: 600m
+        memory: 600Mi
+      limits:
+        cpu: 1000m
+        memory: 1000Mi
+
+# Allows prometheus to search metrics in different namespaces
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelector: {}
+    serviceMonitorNamespaceSelector: {}
