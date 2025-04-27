@@ -21,13 +21,13 @@ minecraftServer:
   pvp: true
   serviceType: NodePort
   downloadWorldUrl:
-  nodePort: 25565
+  nodePort: 30000
   viewDistance: 15
   memory: 8Gi
 
   rcon:
     enabled: true
-    nodePort: 25565
+    nodePort: 30000
     serviceType: NodePort
     password: "globe"
 
@@ -37,8 +37,6 @@ extraEnv:
   FORCE_WORLD_COPY: false
 
 persistence:
-  storageClass: nfs-storageclass
-  annotations: {}
   dataDir:
     enabled: true
     Size: 20Gi

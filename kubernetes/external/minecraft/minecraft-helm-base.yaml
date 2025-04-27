@@ -71,8 +71,6 @@ extraEnv:
 # NOTE this ties the deployment to the first node it spins up on,
 # TODO: use an NFS mount to avoid this
 persistence:
-  storageClass: nfs-storageclass
-  annotations: {}
   dataDir:
     enabled: true
     Size: 20Gi
