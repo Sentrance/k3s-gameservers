@@ -17,6 +17,9 @@ spec:
       containers:
         - name: vintagestory-server
           image: ich777/vintagestory:latest
+          volumeMounts:
+            - mountPath: "/vintagestory"
+              name: pv-deployment-vintagestory
           ports:
             - containerPort: 42420
           resources:
@@ -26,3 +29,7 @@ spec:
             limits:
               memory: 8Gi
               cpu: "3"
+      volumes:
+        - name: pv-deployment-vintagestory
+          persistentVolumeClaim:
+            claimName: pvc-vintagestory
