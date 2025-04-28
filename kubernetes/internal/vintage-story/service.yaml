@@ -10,6 +10,6 @@ spec:
   ports:
     - port: 42420
       targetPort: 42420
-      nodePort: 42420
+      nodePort: 31111
   selector:
     app.kubernetes.io/name: vintagestory-deployment
