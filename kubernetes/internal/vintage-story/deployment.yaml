@@ -19,3 +19,10 @@ spec:
           image: ich777/vintagestory:latest
           ports:
             - containerPort: 42420
+          resources:
+            requests:
+              memory: 3Gi
+              cpu: "1"
+            limits:
+              memory: 8Gi
+              cpu: "3"
