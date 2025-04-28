@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vintagestory-service
+  labels:
+    app.kubernetes.io/name: vintagestory-deployment
+    app: vintagestory
+spec:
+  type: NodePort
+  ports:
+    - port: 42420
+      targetPort: 42420
+      nodePort: 42420
+  selector:
+    app.kubernetes.io/name: vintagestory-deployment

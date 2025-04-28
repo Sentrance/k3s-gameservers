@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vintagestory-deployment
+  labels:
+    app.kubernetes.io/name: vintagestory-deployment
+    app: vintagestory
+spec:
+  selector:
+    matchLabels:
+      app: vintagestory
+  template:
+    metadata:
+      labels:
+        app: vintagestory
+    spec:
+      containers:
+        - name: vintagestory-server
+          image: ich777/vintagestory:latest
+          ports:
+            - containerPort: 42420
