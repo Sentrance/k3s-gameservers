@@ -66,11 +66,15 @@ extraEnv:
   # WARNING: setting this to true deletes your previous world data
   FORCE_WORLD_COPY: false
 
-# required to save the world in persistent local-path storage (k3s default Storage Class)
-# by default this goes in /var/lib/rancher/k3s/storage on the executing node.
-# NOTE this ties the deployment to the first node it spins up on,
-# TODO: use an NFS mount to avoid this
+# This bounds the server to a PVC, making it easier to provide a storage while avoiding k3s to put the volume in his dir
+# Downside is that you need to chown the volume mount if you put the directory on the Node like me
+# example: sudo chown 1000:3000 -R /mnt/volume-minecraft-base
 persistence:
   dataDir:
     enabled: true
     existingClaim: pvc-minecraft-base
+
+# Check above
+podSecurityContext:
+  runAsGroup: 3000
+  fsGroup: 3000
