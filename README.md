@@ -1,4 +1,4 @@
-# k8s-minecraft
+# k3s-minecraft
 
 Very easy setup of minecraft servers managed in a lightweight Kubernetes cluster.
 
