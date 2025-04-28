@@ -38,4 +38,4 @@ extraEnv:
 persistence:
   dataDir:
     enabled: true
-    Size: 20Gi
+    existingClaim: pvc-playzir
