@@ -38,4 +38,8 @@ extraEnv:
 persistence:
   dataDir:
     enabled: true
-    Size: 20Gi
+    existingClaim: pvc-playzir
+
+podSecurityContext:
+  runAsGroup: 3000
+  fsGroup: 3000
