@@ -27,11 +27,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: traefik-plzmc
+  name: traefik-playzir-minecraft
 spec:
   type: LoadBalancer
   ports:
-    - targetPort: playzir-minecraft
+    - targetPort: plz-mc
       port: 80
   selector:
     app: traefik
