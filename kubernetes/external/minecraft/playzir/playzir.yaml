@@ -9,7 +9,6 @@ resources:
 minecraftServer:
   version: LATEST
   type: "AUTO_CURSEFORGE"
-  cfServerMod: https://www.curseforge.com/minecraft/modpacks/sky-evolution
   difficulty: hard
   whitelist:
   ops:
@@ -26,7 +25,7 @@ minecraftServer:
   autoCurseForge:
     apiKey:
       key: ""
-    pageUrl: "https://www.curseforge.com/minecraft/modpacks/sky-evolution"
+    pageUrl: "https://mediafilez.forgecdn.net/files/6475/395/Prominence_II_RPG_Hasturian_Era_Server_Pack_v3.1.10.zip"
 
 
   rcon:
