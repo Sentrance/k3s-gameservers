@@ -24,6 +24,7 @@ spec:
             - --providers.kubernetesIngress
             - --providers.kubernetesCRD
             - --entrypoints.web.address=:80
+            - --entrypoints.playzir-mc.address=:25565
           ports:
             - name: web
               containerPort: 80
