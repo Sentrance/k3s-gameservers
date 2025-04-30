@@ -39,3 +39,18 @@ spec:
       name: playzir-mc
   selector:
     app: traefik
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-vintagestory
+  namespace: traefik
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: vintagestory
+      port: 25565
+      name: vintagestory
+  selector:
+    app: traefik

@@ -1,0 +1,13 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: vintagestory-tcp
+  namespace: vintagestory
+spec:
+  entryPoints:
+    - vintagestory
+  routes:
+    - match: HostSNI(`*`)
+      services:
+        - name: vintagestory-service
+          port: 42420

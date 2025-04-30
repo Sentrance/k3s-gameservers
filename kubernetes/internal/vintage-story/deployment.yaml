@@ -22,7 +22,8 @@ spec:
             - mountPath: "/vintagestory"
               name: pv-deployment-vintagestory
           ports:
-            - containerPort: 42420
+            - name: vintagestory
+              containerPort: 42420
           resources:
             requests:
               memory: 3Gi
