@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - vintagestory
   routes:
-    - match: HostSNI(`vintagestory.sentrance.fr`)
+    - match: HostSNI(`vs.sentrance.fr`)
       services:
         - name: vintagestory-service
           port: 42420

@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - playzir-mc
   routes:
-    - match: HostSNI(`minecraft.sentrance.fr`)
+    - match: HostSNI(`mc.sentrance.fr`)
       services:
         - name: playzir-minecraft
           port: 25565
