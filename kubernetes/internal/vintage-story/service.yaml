@@ -4,7 +4,6 @@ metadata:
   name: vintagestory-service
   namespace: vintagestory
   labels:
-    app.kubernetes.io/name: vintagestory-deployment
     app: vintagestory
 spec:
   type: ClusterIP
@@ -13,4 +12,4 @@ spec:
       port: 42420
       targetPort: vintagestory
   selector:
-    app.kubernetes.io/name: vintagestory-deployment
+    app.kubernetes.io/name: vintagestory
