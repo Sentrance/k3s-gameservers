@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: traefik-playzir-minecraft
+  name: traefik-playzir
 spec:
   type: LoadBalancer
   ports:
