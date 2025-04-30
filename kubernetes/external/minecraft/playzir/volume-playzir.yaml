@@ -2,6 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: pv-playzir
+  namespace: minecraft
   labels:
     type: local
 spec:
@@ -18,6 +19,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: pvc-playzir
+  namespace: minecraft
 spec:
   storageClassName: storage-playzir
   accessModes:
