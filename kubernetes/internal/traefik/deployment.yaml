@@ -28,3 +28,5 @@ spec:
               containerPort: 80
             - name: dashboard
               containerPort: 8080
+            - name: playzir
+              containerPort: 25565

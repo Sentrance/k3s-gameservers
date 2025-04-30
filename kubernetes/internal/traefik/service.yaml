@@ -22,3 +22,16 @@ spec:
       port: 80
   selector:
     app: traefik
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-playzir-minecraft
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: playzir-minecraft
+      port: 80
+  selector:
+    app: traefik

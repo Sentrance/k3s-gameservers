@@ -36,23 +36,16 @@ minecraftServer:
   gameMode: survival
   motd: "Welcome to Minecraft on Kubernetes"
   pvp: true
-  # REQUIRED this means you get nodePort exposed on all nodes and will get
-  # directed to the correct node if you connect to any
-  serviceType: NodePort
+  serviceType: ClusterIP
+  servicePort: 25565
   # restore the world from a backup on first execution (requires NFS volume - see below)
   downloadWorldUrl:
-  # external port must be unique across all mc server instances on a given node
-  nodePort: 30100
   viewDistance: 10
   memory: 8g
 
   rcon:
     # enable rcon for remote control - set to false if not required
     enabled: true
-    # external port must be unique across all mc server instances
-    nodePort: 30001
-    # required
-    serviceType: NodePort
     password: "globe"
 
 extraEnv:

@@ -19,15 +19,13 @@ minecraftServer:
   gameMode: survival
   motd: "Welcome to Minecraft on Kubernetes"
   pvp: true
-  serviceType: NodePort
-  nodePort: 30100
+  serviceType: ClusterIP
+  servicePort: 25565
   viewDistance: 20
   memory: 8g
 
   rcon:
     enabled: true
-    nodePort: 30001
-    serviceType: NodePort
     password: "globe"
 
 extraEnv:
