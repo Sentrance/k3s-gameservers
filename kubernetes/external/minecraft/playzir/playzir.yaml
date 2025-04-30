@@ -8,8 +8,8 @@ resources:
 
 minecraftServer:
   version: LATEST
-  type: "PAPER"
-  paperDownloadUrl: https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/226/downloads/paper-1.21.4-226.jar
+  type: "AUTO_CURSEFORGE"
+  cfServerMod: https://www.curseforge.com/minecraft/modpacks/sky-evolution
   difficulty: hard
   whitelist:
   ops:
@@ -23,6 +23,11 @@ minecraftServer:
   servicePort: 25565
   viewDistance: 20
   memory: 8g
+  autoCurseForge:
+    apiKey:
+      key: ""
+    pageUrl: "https://www.curseforge.com/minecraft/modpacks/sky-evolution"
+
 
   rcon:
     enabled: true
