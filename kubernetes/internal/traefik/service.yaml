@@ -31,7 +31,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - targetPort: plz-mc
-      port: 80
+    - targetPort: playzir-minecraft
+      port: 25565
   selector:
     app: traefik

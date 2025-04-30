@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: traefik-deployment
-  namespace: traefik  # Add the namespace
+  namespace: traefik
   labels:
     app: traefik
 spec:
