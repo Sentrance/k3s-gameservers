@@ -2,14 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   name: vintagestory-service
+  namespace: vintagestory
   labels:
-    app.kubernetes.io/name: vintagestory-deployment
     app: vintagestory
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
-    - port: 42420
-      targetPort: 42420
-      nodePort: 31111
+    - name: vintagestory
+      port: 42420
+      targetPort: vintagestory
   selector:
-    app.kubernetes.io/name: vintagestory-deployment
+    app: vintagestory

@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-dashboard-service
+  namespace: traefik
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: dashboard
+  selector:
+    app: traefik
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-web-service
+  namespace: traefik
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: web
+      port: 80
+  selector:
+    app: traefik
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-playzir-minecraft
+  namespace: traefik
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: playzir-mc
+      port: 25565
+      name: playzir-mc
+  selector:
+    app: traefik
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-vintagestory
+  namespace: traefik
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: vintagestory
+      port: 42420
+      name: vintagestory
+  selector:
+    app: traefik

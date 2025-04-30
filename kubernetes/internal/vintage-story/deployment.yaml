@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vintagestory-deployment
+  namespace: vintagestory
   labels:
     app.kubernetes.io/name: vintagestory-deployment
     app: vintagestory
@@ -21,7 +22,8 @@ spec:
             - mountPath: "/vintagestory"
               name: pv-deployment-vintagestory
           ports:
-            - containerPort: 42420
+            - name: vintagestory
+              containerPort: 42420
           resources:
             requests:
               memory: 3Gi
