@@ -50,7 +50,7 @@ spec:
   type: LoadBalancer
   ports:
     - targetPort: vintagestory
-      port: 25565
+      port: 42420
       name: vintagestory
   selector:
     app: traefik

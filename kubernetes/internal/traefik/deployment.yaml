@@ -25,7 +25,7 @@ spec:
             - --providers.kubernetesCRD
             - --entrypoints.web.address=:80
             - --entrypoints.playzir-mc.address=:25565
-            - -entrypoints.vintagestory.address=:42420
+            - --entrypoints.vintagestory.address=:42420
           ports:
             - name: web
               containerPort: 80
