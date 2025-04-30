@@ -4,7 +4,7 @@ metadata:
   name: minecraft-tcp
 spec:
   entryPoints:
-    - playir-mc
+    - playzir-mc
   routes:
     - match: HostSNI(`*`)
       services:
