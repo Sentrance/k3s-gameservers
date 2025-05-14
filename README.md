@@ -38,7 +38,7 @@ Helm helps to manage Kubernetes apps, here through re-using an existing minecraf
 
 ### Itzg minecraft server chart
 
-Contains the helm chart baseline. 
+Contains the helm chart baseline.
 
 [Repository link](https://github.com/itzg/minecraft-server-charts).
 
@@ -72,12 +72,15 @@ Go to _kubernetes/external/kube-prometheus-stack_ and use `./setup.sh`.
 - PV & PVC for consistent data
 - Service to expose grafana URL
 
-# Ingress
+# Traefik Ingress controller / Service LoadBalancer
 
-You might not want to expose grafana directly, you almost might want a domain name for the minecraft servers. In such 
-case what you need is an Ingress.
+We use traefik, that is provided by k3s, to manage networking.
 
-Here are some cool ressources to check:
+Traefik is a modern HTTP reverse proxy and load balancer made to deploy microservices with ease.
+It simplifies networking complexity while designing, deploying, and running applications.
 
-- [k3s networking services](https://docs.k3s.io/networking/networking-services)
-- [I don't want k3s networking and prefer a traditional nginx](https://github.com/gilesknap/k3s-minecraft/blob/main/useful/deployed/ingress-nginx/README.md)
+By default, K3s provides a load balancer known as ServiceLB (formerly Klipper LoadBalancer) that uses available host ports.
+The ServiceLB controller watches Kubernetes Services with the `spec.type` field set to `LoadBalancer`.
+
+In this repo services are often added under `kubernetes/internal/traefik/service.yaml` and then we define the ingress
+under its respective directory.
