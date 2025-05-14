@@ -4,15 +4,16 @@ resources:
     cpu: 1
   limits:
     memory: 24Gi
-    cpu: 2
+    cpu: 4
 
 minecraftServer:
-  version: LATEST
-  type: "PAPER"
-  paperDownloadUrl: https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/226/downloads/paper-1.21.4-226.jar
-  difficulty: hard
+  version: "1.20.1"
+  type: "FABRIC"
+  fabricLauncherVersion: "1.0.3"
+  fabricLoaderVersion: "0.16.10"
+  difficulty: normal
   whitelist:
-  ops:
+  ops: "Sentrance"
   forcegameMode: true
   levelSeed:
   maxWorldSize: 50000
@@ -22,16 +23,14 @@ minecraftServer:
   serviceType: ClusterIP
   servicePort: 25565
   viewDistance: 20
-  memory: 8g
-
-  rcon:
-    enabled: true
-    password: "globe"
+  memory: 16g
 
 extraEnv:
   ENABLE_ROLLING_LOGS: true
   OVERRIDE_SERVER_PROPERTIES: true
   FORCE_WORLD_COPY: false
+  MAX_TICK_TIME: -1
+  ALLOW_FLIGHT: true
 
 persistence:
   dataDir:
