@@ -4,14 +4,16 @@ resources:
     cpu: 1
   limits:
     memory: 24Gi
-    cpu: 2
+    cpu: 4
 
 minecraftServer:
-  version: LATEST
-  type: "AUTO_CURSEFORGE"
-  difficulty: hard
+  version: "1.20.1"
+  type: "FABRIC"
+  fabricLauncherVersion: "1.0.3"
+  fabricLoaderVersion: "0.16.10"
+  difficulty: normal
   whitelist:
-  ops:
+  ops: "Sentrance"
   forcegameMode: true
   levelSeed:
   maxWorldSize: 50000
@@ -21,21 +23,14 @@ minecraftServer:
   serviceType: ClusterIP
   servicePort: 25565
   viewDistance: 20
-  memory: 8g
-  autoCurseForge:
-    apiKey:
-      key: ""
-    pageUrl: "https://mediafilez.forgecdn.net/files/6475/395/Prominence_II_RPG_Hasturian_Era_Server_Pack_v3.1.10.zip"
-
-
-  rcon:
-    enabled: true
-    password: "globe"
+  memory: 16g
 
 extraEnv:
   ENABLE_ROLLING_LOGS: true
   OVERRIDE_SERVER_PROPERTIES: true
   FORCE_WORLD_COPY: false
+  MAX_TICK_TIME: -1
+  ALLOW_FLIGHT: true
 
 persistence:
   dataDir:
