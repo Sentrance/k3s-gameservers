@@ -54,3 +54,18 @@ spec:
       name: vintagestory
   selector:
     app: traefik
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-terraria
+  namespace: traefik
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: terraria
+      port: 7777
+      name: terraria
+  selector:
+    app: traefik

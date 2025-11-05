@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: terraria-service
+  namespace: terraria
+  labels:
+    app: terraria
+spec:
+  type: ClusterIP
+  ports:
+    - name: terraria
+      port: 7777
+      targetPort: terraria
+  selector:
+    app: terraria
