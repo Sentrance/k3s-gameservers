@@ -19,7 +19,7 @@ spec:
         - name: terraria-server
           image: passivelemon/terraria-docker:terraria-latest
           volumeMounts:
-            - mountPath: "/terraria"
+            - mountPath: "/opt/terraria/"
               name: pv-deployment-terraria
           ports:
             - name: terraria
