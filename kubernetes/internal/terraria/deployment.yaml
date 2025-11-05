@@ -16,14 +16,12 @@ spec:
         app: terraria
     spec:
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 3000
         fsGroup: 3000
       containers:
         - name: terraria-server
           image: passivelemon/terraria-docker:terraria-latest
           volumeMounts:
-            - mountPath: "/opt/terraria/"
+            - mountPath: "/opt/terraria/config"
               name: pv-deployment-terraria
           ports:
             - name: terraria
