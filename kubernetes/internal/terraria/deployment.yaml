@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: terraria-deployment
+  namespace: terraria
+  labels:
+    app.kubernetes.io/name: terraria-deployment
+    app: terraria
+spec:
+  selector:
+    matchLabels:
+      app: terraria
+  template:
+    metadata:
+      labels:
+        app: terraria
+    spec:
+      containers:
+        - name: terraria-server
+          image: passivelemon/terraria-docker:terraria-latest
+          volumeMounts:
+            - mountPath: "/terraria"
+              name: pv-deployment-terraria
+          ports:
+            - name: terraria
+              containerPort: 7777
+          resources:
+            requests:
+              memory: 3Gi
+              cpu: "1"
+            limits:
+              memory: 8Gi
+              cpu: "3"
+      volumes:
+        - name: pv-deployment-terraria
+          persistentVolumeClaim:
+            claimName: pvc-terraria

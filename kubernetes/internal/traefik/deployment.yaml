@@ -26,6 +26,7 @@ spec:
             - --entrypoints.web.address=:80
             - --entrypoints.playzir-mc.address=:25565
             - --entrypoints.vintagestory.address=:42420
+            - --entrypoints.terraria.address=:7777
           ports:
             - name: web
               containerPort: 80
@@ -35,3 +36,5 @@ spec:
               containerPort: 25565
             - name: vintagestory
               containerPort: 42420
+            - name: terraria
+              containerPort: 7777
