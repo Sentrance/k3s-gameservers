@@ -69,3 +69,18 @@ spec:
       name: terraria
   selector:
     app: traefik
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-palworld
+  namespace: traefik
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: palworld
+      port: 8211
+      name: palworld
+  selector:
+    app: traefik

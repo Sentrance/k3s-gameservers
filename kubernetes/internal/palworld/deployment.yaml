@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: palworld-deployment
+  namespace: palworld
+  labels:
+    app.kubernetes.io/name: palworld-deployment
+    app: palworld
+spec:
+  selector:
+    matchLabels:
+      app: palworld
+  template:
+    metadata:
+      labels:
+        app: palworld
+    spec:
+      containers:
+        - name: palworld-server
+          image: thijsvanloef/palworld-server-docker:latest
+          volumeMounts:
+            - mountPath: "/palworld"
+              name: pv-deployment-palworld
+          ports:
+            - containerPort: 8211
+              name: palworld-server
+              protocol: UDP
+          resources:
+            requests:
+              memory: 6Gi
+              cpu: "1"
+            limits:
+              memory: 12Gi
+              cpu: "3"
+      volumes:
+        - name: pv-deployment-palworld
+          persistentVolumeClaim:
+            claimName: pvc-palworld
