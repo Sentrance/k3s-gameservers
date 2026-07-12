@@ -20,6 +20,36 @@ spec:
       containers:
         - name: palworld-server
           image: thijsvanloef/palworld-server-docker:latest
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: PORT
+              value: "8211"
+            - name: PLAYERS
+              value: "16"
+            - name: MULTITHREADING
+              value: "true"
+            - name: COMMUNITY
+              value: "false"
+            - name: SERVER_NAME
+              value: "Playzir"
+            - name: SERVER_DESCRIPTION
+              value: "Private server for Playzir"
+            - name: TZ
+              value: "Europe/Paris"
+            # --- Passwords: pulled from the palworld-secrets Secret ---
+            - name: SERVER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: palworld-secrets
+                  key: server-password
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: palworld-secrets
+                  key: admin-password
           volumeMounts:
             - mountPath: "/palworld"
               name: pv-deployment-palworld

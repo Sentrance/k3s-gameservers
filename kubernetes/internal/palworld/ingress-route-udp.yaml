@@ -8,5 +8,5 @@ spec:
     - palworld
   routes:
     - services:
-        - name: palworld-service          # CHANGED: was "palworld-server-service" (didn't exist)
+        - name: palworld-service
           port: 8211
