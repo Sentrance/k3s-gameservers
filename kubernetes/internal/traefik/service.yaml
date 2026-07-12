@@ -82,5 +82,6 @@ spec:
     - targetPort: palworld
       port: 8211
       name: palworld
+      protocol: UDP
   selector:
     app: traefik

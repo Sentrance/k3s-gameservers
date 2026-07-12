@@ -27,7 +27,7 @@ spec:
             - --entrypoints.playzir-mc.address=:25565
             - --entrypoints.vintagestory.address=:42420
             - --entrypoints.terraria.address=:7777
-            - --entrypoints.palworld.address=:8211
+            - --entrypoints.palworld.address=:8211/udp
           ports:
             - name: web
               containerPort: 80
@@ -41,3 +41,4 @@ spec:
               containerPort: 7777
             - name: palworld
               containerPort: 8211
+              protocol: UDP

@@ -11,6 +11,6 @@ spec:
     - name: palworld-port
       port: 8211
       protocol: UDP
-      targetPort: palworld-port
+      targetPort: 8211
   selector:
     app: palworld

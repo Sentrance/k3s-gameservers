@@ -1,0 +1,12 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteUDP
+metadata:
+  name: palworld-udp
+  namespace: palworld
+spec:
+  entryPoints:
+    - palworld
+  routes:
+    - services:
+        - name: palworld-service          # CHANGED: was "palworld-server-service" (didn't exist)
+          port: 8211
